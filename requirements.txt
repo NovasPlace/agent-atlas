@@ -1,0 +1,13 @@
+# Agent Memory Kit — Python dependencies
+#
+# Core requirements (must be installed):
+#   psycopg2-binary   — PostgreSQL adapter for pg_broadcast real-time events
+#
+# CortexDB (local — installed separately):
+#   CortexDB is NOT on PyPI. Install via:
+#     git clone https://github.com/frost/CortexDB  (or included in kit)
+#     pip install -e ./CortexDB
+#
+# All other imports are Python standard library (3.11+).
+
+psycopg2-binary>=2.9.0
