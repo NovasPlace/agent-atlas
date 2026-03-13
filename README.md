@@ -1,4 +1,4 @@
-# Atlas
+# Atlas v2.0
 
 ### Anamnesis for AI Agents
 
@@ -217,3 +217,17 @@ bash install.sh --uninstall
 ## License
 
 MIT
+
+---
+
+## Changelog
+
+### v2.0.0 (2026-03-13)
+- **CortexDB Engine** — 884-line cognitive memory engine with Ebbinghaus decay, Hebbian learning, emotional encoding, source monitoring, spreading activation
+- **Governance Client** — Fail-open integration with Token Metabolism, Consistency, and Grounding daemons
+- **Onboarding Organ** — Automated codebase comprehension (tree scan, framework detection, architecture classification, warm file generation, CortexDB pattern storage)
+- **Security hardening** — All file reads capped, URLs env-configurable, full credential scrub
+- **Path scrub** — All personal and local references removed for universal portability
+
+### v1.0.0
+- Initial release — 16 background daemons for persistent agent memory and coordination
