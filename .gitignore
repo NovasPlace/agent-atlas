@@ -1,0 +1,23 @@
+# Runtime data — never commit these
+*.db
+*.db-shm
+*.db-wal
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Personal memory state — user-specific
+hot.md
+session.md
+session_context.md
+last_session.md
+last_briefing.md
+hallucination_report.md
+projects/
+archive.md
+
+# Logs
+*.log
