@@ -215,7 +215,7 @@ def _cortex_access_detail(project_name: str) -> str:
         import sys as _sys
         import os as _os
         _cortex_root = _os.path.expanduser(
-            "~/Desktop/Agent_System/DB-Memory/CortexDB"
+            "$AGENT_CORTEX_ROOT"
         )
         if _cortex_root not in _sys.path:
             _sys.path.insert(0, _cortex_root)

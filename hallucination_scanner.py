@@ -1,6 +1,6 @@
 """Hallucination Scanner — Validates Python imports in agent-generated code.
 
-Watches for recently modified .py files under ~/Desktop/Agent_System/ and:
+Watches for recently modified .py files under ~/projects/ and:
 1. Runs ast.parse() to catch syntax errors
 2. Extracts all import/from-import statements
 3. Validates imports resolve via importlib.util.find_spec()
@@ -21,11 +21,11 @@ import sys
 import time
 from pathlib import Path
 
-_CORTEX_ROOT = os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB")
+_CORTEX_ROOT = os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb"))
 if _CORTEX_ROOT not in sys.path:
     sys.path.insert(0, _CORTEX_ROOT)
 
-AGENT_SYSTEM_DIR = os.path.expanduser("~/Desktop/Agent_System")
+AGENT_SYSTEM_DIR = os.environ.get("AGENT_SYSTEM_DIR", os.path.expanduser("~/projects"))
 REPORT_FILE = Path(os.path.expanduser("~/.gemini/memory/hallucination_report.md"))
 DEFAULT_DB_PATH = os.path.expanduser("~/.cortexdb/agent_system.db")
 

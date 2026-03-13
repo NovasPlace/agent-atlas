@@ -317,7 +317,7 @@ def main():
 
     if args.detect_new:
         # Scan the Agent_System directory for new projects
-        agent_dir = os.path.expanduser("~/Desktop/Agent_System")
+        agent_dir = os.environ.get("AGENT_SYSTEM_DIR", os.path.expanduser("~/projects"))
         new = detect_new_projects(agent_dir)
         if new:
             print(f"Found {len(new)} untracked projects:")

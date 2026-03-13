@@ -5,7 +5,7 @@
 #
 # CortexDB (local — installed separately):
 #   CortexDB is NOT on PyPI. Install via:
-#     git clone https://github.com/frost/CortexDB  (or included in kit)
+#     git clone included in this kit  (or included in kit)
 #     pip install -e ./CortexDB
 #
 # All other imports are Python standard library (3.11+).

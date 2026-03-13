@@ -39,7 +39,7 @@ logger = logging.getLogger("context-recall")
 # ── Paths ──────────────────────────────────────────────────
 
 _MEMORY_DIR = Path(os.path.expanduser("~/.gemini/memory"))
-_CORTEX_ROOT = Path(os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB"))
+_CORTEX_ROOT = Path(os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb")))
 _DEFAULT_DB = os.path.expanduser("~/.cortexdb/agent_system.db")
 
 for _p in [str(_CORTEX_ROOT), str(_MEMORY_DIR)]:
@@ -397,7 +397,7 @@ async def _self_test() -> bool:
             "# HOT MEMORY\n\n## ACTIVE PROJECTS\n\n"
             "| Project | Location | Status | Warm File |\n"
             "|---------|----------|--------|-----------|\n"
-            "| Locus | `~/Desktop/Agent_System/Locus/` | v3.1 — Apply-back next | `projects/locus.md` |\n\n"
+            "| Locus | `~/projects/locus/` | v3.1 — Apply-back next | `projects/locus.md` |\n\n"
             "## OPEN THREADS\n\n"
             "- **CortexDB packaging** — prep for public release\n"
             "- **Agent Memory Kit** — needs icon\n\n"

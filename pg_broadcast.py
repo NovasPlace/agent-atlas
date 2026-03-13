@@ -44,7 +44,7 @@ logger = logging.getLogger("pg-broadcast")
 # ── Constants ──────────────────────────────────────────────
 
 CHANNEL = "agent_memory_updates"
-PG_DSN = "dbname=agent_ide user=frost"
+PG_DSN = "dbname=agent_ide user=agent"
 
 # Maximum payload size for NOTIFY (Postgres limit is 8000 bytes)
 MAX_NOTIFY_BYTES = 7500

@@ -19,7 +19,7 @@ from typing import Any
 
 # CortexDB import via sys.path
 _CORTEX_ROOT = Path(os.path.expanduser(
-    "~/Desktop/Agent_System/DB-Memory/CortexDB"
+    os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb"))
 ))
 if str(_CORTEX_ROOT) not in sys.path:
     sys.path.insert(0, str(_CORTEX_ROOT))

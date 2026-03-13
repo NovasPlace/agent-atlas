@@ -1,11 +1,9 @@
 [Unit]
-Description=Agent System Maintenance Timer (every 6 hours)
-Documentation=file:///home/frost/.gemini/memory/maintain.py
+Description=Agent Memory Maintenance (periodic trigger)
 
 [Timer]
 OnBootSec=5min
-OnUnitActiveSec=6h
-# Fire immediately on wake if missed during sleep/hibernate
+OnUnitActiveSec=30min
 Persistent=true
 
 [Install]

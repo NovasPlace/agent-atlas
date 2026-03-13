@@ -114,7 +114,7 @@ def parse_directive(md_content: str) -> list[dict]:
 
 def _load_cortex(db_path: str):
     """Import Cortex at call time so we don't fail if CortexDB not on path."""
-    _CORTEX_ROOT = os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB")
+    _CORTEX_ROOT = os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb"))
     _MEM_ROOT    = os.path.expanduser("~/.gemini/memory")
     for p in [_CORTEX_ROOT, _MEM_ROOT]:
         if p not in sys.path:

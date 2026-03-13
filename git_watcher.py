@@ -234,7 +234,7 @@ def _get_head_sha(repo_path: str) -> str:
 
 def _load_cortex():
     """Lazy-import Cortex — same path pattern as other daemons."""
-    _CORTEX_ROOT = os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB")
+    _CORTEX_ROOT = os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb"))
     if _CORTEX_ROOT not in sys.path:
         sys.path.insert(0, _CORTEX_ROOT)
     from cortex.engine import Cortex  # type: ignore

@@ -29,7 +29,7 @@ import sys
 import time
 
 _MEMORY_ROOT = os.path.expanduser("~/.gemini/memory")
-_CORTEX_ROOT = os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB")
+_CORTEX_ROOT = os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb"))
 for p in [_MEMORY_ROOT, _CORTEX_ROOT]:
     if p not in sys.path:
         sys.path.insert(0, p)

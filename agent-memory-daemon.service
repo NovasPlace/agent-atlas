@@ -1,18 +1,15 @@
 [Unit]
 Description=Agent Memory Daemon (continuous background)
-Documentation=file:///home/frost/.gemini/memory/agent_memory_daemon.py
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/frost/.gemini/memory/agent_memory_daemon.py
+ExecStart=%h/.gemini/memory/agent_memory_daemon.py
 Restart=on-failure
 RestartSec=10
-StandardOutput=append:/home/frost/.cortexdb/memory-daemon.log
-StandardError=append:/home/frost/.cortexdb/memory-daemon.log
-
-# Grace period for clean shutdown
 TimeoutStopSec=15
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=default.target

@@ -36,7 +36,7 @@ logger = logging.getLogger("md-indexer")
 # ── Paths ──────────────────────────────────────────────────
 
 _MEMORY_DIR = Path(os.path.expanduser("~/.gemini/memory"))
-_CORTEX_ROOT = Path(os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB"))
+_CORTEX_ROOT = Path(os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb")))
 _DEFAULT_DB = os.path.expanduser("~/.cortexdb/agent_system.db")
 
 for _p in [str(_CORTEX_ROOT), str(_MEMORY_DIR)]:

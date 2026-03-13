@@ -1,12 +1,8 @@
 [Unit]
-Description=Agent System Cognitive Maintenance
-Documentation=file:///home/frost/.gemini/memory/maintain.py
+Description=Agent Memory Maintenance (periodic)
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/python3 /home/frost/.gemini/memory/maintain.py
-StandardOutput=append:/home/frost/.cortexdb/maintain.log
-StandardError=append:/home/frost/.cortexdb/maintain.log
-
-# Don't kill agent processes if maintenance takes long
-TimeoutStartSec=120
+ExecStart=%h/.gemini/memory/maintain.py
+StandardOutput=journal
+StandardError=journal

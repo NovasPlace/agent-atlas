@@ -18,7 +18,7 @@ import sys
 import time
 from pathlib import Path
 
-_CORTEX_ROOT = os.path.expanduser("~/Desktop/Agent_System/DB-Memory/CortexDB")
+_CORTEX_ROOT = os.environ.get("AGENT_CORTEX_ROOT", os.path.expanduser("~/.cortexdb"))
 _MEMORY_ROOT = os.path.expanduser("~/.gemini/memory")
 for p in [_CORTEX_ROOT, _MEMORY_ROOT]:
     if p not in sys.path:
